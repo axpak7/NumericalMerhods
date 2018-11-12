@@ -5,7 +5,7 @@
 import numpy as np
 
 
-def polynomDescent(X):
+def polynomValue(X):
     """
     Нахождение значения полинома
     :param X: задание неизвестных переменных x, y, z
@@ -28,7 +28,7 @@ def gradientDescent(A, x, b):
     return np.dot(A, x) + b
 
 
-def stepDescent(q, A):
+def stepValue(q, A):
     """
     Вычисление шага m
     :param q: градиент
@@ -47,7 +47,7 @@ b = np.array([[1], [-2], [3]])
 epsilon = 0.0000001
 # first member
 x = np.array([[1], [0], [0]])
-new_f = polynomDescent(x)
+new_f = polynomValue(x)
 f = 0
 print("iteration: 1")
 print("vector x = \n", x)
@@ -57,9 +57,9 @@ while abs(f - new_f) > epsilon:
     print("iteration: ", i)
     f = new_f
     q = gradientDescent(A, x, b)
-    m = stepDescent(q, A)
+    m = stepValue(q, A)
     x = x + m * q
-    new_f = polynomDescent(x)
+    new_f = polynomValue(x)
     print("gradient = \n", q)
     print("step = ", m)
     print("vector x = \n", x)
