@@ -32,6 +32,7 @@ def stepValue(A, x, b, e):
     return -numerator / denominator
 
 
+print("Method of fastest coordinate descent")
 # constants
 A = np.array([[4, 1, 1], [1, 6.2, -1], [1, -1, 8.2]])
 b = np.array([[1], [-2], [3]])
