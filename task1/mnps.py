@@ -36,7 +36,7 @@ print("Method of fastest coordinate descent")
 # constants
 A = np.array([[4, 1, 1], [1, 6.2, -1], [1, -1, 8.2]])
 b = np.array([[1], [-2], [3]])
-epsilon = 0.0000001
+epsilon = 0.0000000001
 # first member
 x = np.array([[0], [0], [0]])
 new_f = polynomValue(x)
@@ -77,5 +77,5 @@ while abs(f - new_f) > epsilon:
     print("direction = \n", e)
     print("step = ", m)
     print("vector x = \n", x)
-    print("polynom value = ", new_f, "\n")
+    print("polynom value = %.11f" % new_f, "\n")
     i = i + 1
